@@ -99,3 +99,16 @@ button:hover {
     position: absolute;
     transition: left 0.2s ease, top 0.2s ease;
 }
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 22px;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
