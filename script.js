@@ -1,38 +1,30 @@
+// ===== YES & NO BUTTON LOGIC =====
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
-const message = document.getElementById("message");
+const buttonsArea = document.querySelector(".buttons");
 
-if (noBtn) {
-    noBtn.addEventListener("mouseenter", () => {
-        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-        noBtn.style.left = x + "px";
-        noBtn.style.top = y + "px";
-    });
+// Move NO button around the question area
+if (noBtn && buttonsArea) {
+  noBtn.addEventListener("mouseenter", () => {
+    const maxX = buttonsArea.clientWidth - noBtn.offsetWidth;
+    const maxY = buttonsArea.clientHeight - noBtn.offsetHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
 }
-yesBtn.addEventListener("click", () => {
+
+// YES button → open new page
+if (yesBtn) {
+  yesBtn.addEventListener("click", () => {
     window.location.href = "yes.html";
-});
-
-const heartsContainer = document.querySelector(".hearts");
-function createHeart() {
-    if (!heartsContainer) return;
-
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "💕";
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 20 + 15 + "px";
-    heartsContainer.appendChild(heart);
-    setTimeout(() => {
-        heart.remove();
-    },4000);
+  });
 }
-if (heartsContainer){
-    setInterval(createHeart,250);
-}
-// ❤️ HEART ANIMATION (works on all pages)
+
+// ===== HEART ANIMATION (WORKS ON ALL PAGES) =====
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
