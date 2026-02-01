@@ -35,14 +35,27 @@ h1 {
 
 /* ALL BUTTONS — SIZE NEVER CHANGES */
 button {
-  padding: 12px 25px;
+  width: 110px;
+  height: 45px;
+  line-height: 45px;
   font-size: 18px;
+
   border: none;
   border-radius: 25px;
   cursor: pointer;
+
   position: absolute;
   box-sizing: border-box;
+
+  padding: 0;
+  transform: none;
+
+  white-space: nowrap;
+  -webkit-appearance: none;
+  appearance: none;
 }
+
+
 
 /* YES BUTTON */
 #yesBtn {
