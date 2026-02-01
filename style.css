@@ -26,6 +26,11 @@ button{
     border-radius: 25px;
     cursor: pointer;
     position: absolute;
+    box-sizing: border-box;
+    transform: scale(1);
+}
+button:hover {
+    transform: scale(1);
 }
 #yesBtn{
     background-color: #ff4d88;
@@ -35,10 +40,44 @@ button{
 #noBtn{
     background-color: #555;
     color: white;
-    right: 40px;
+    top: 50%;
+    left: 50%;
 }
 #message{
     margin-top: 25px;
     font-size: 22px;
     color: #ff0066;
+}
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+.heart{
+    position: absolute;
+    color: #ff4d88;
+    font-size: 24px;
+    animation: floatUp 4s linear forwards;
+}
+@keyframes floatUp {
+    0%{
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+.cute-img{
+    width: 200px;
+    margin-top: 15px;
+    border-radius: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
