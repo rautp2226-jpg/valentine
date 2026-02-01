@@ -18,14 +18,22 @@ h1 {
   color: #ff4d88;
 }
 
+/* CUTE IMAGE */
+.cute-img {
+  width: 200px;
+  margin: 15px auto;
+  border-radius: 20px;
+  display: block;
+}
+
 /* BUTTON AREA */
 .buttons {
   margin-top: 20px;
   position: relative;
-  height: 150px;
+  height: 160px;
 }
 
-/* ALL BUTTONS */
+/* ALL BUTTONS — SIZE NEVER CHANGES */
 button {
   padding: 12px 25px;
   font-size: 18px;
@@ -34,42 +42,23 @@ button {
   cursor: pointer;
   position: absolute;
   box-sizing: border-box;
-
-  /* 🔒 LOCK SIZE */
-  transform: scale(1);
-  transition: transform 0.15s ease;
 }
-button:hover {
-  transform: scale(0.92); /* 👈 SHRINK instead of grow */
-}
-
-
-
 
 /* YES BUTTON */
 #yesBtn {
   background-color: #ff4d88;
   color: white;
   left: 40px;
+  top: 0;
 }
 
-/* NO BUTTON */
+/* NO BUTTON — smooth movement */
 #noBtn {
   background-color: #555;
   color: white;
   right: 40px;
   top: 0;
-  transition: left 0.2s ease, top 0.2s ease;
-}
-
-/* IMAGE */
-.cute-img {
-  width: 200px;
-  margin-top: 15px;
-  border-radius: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  transition: left 0.35s ease, top 0.35s ease;
 }
 
 /* ❤️ HEART ANIMATION */

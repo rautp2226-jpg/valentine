@@ -1,9 +1,8 @@
-// ===== YES & NO BUTTON LOGIC =====
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 const buttonsArea = document.querySelector(".buttons");
 
-// Move NO button around the question area
+/* NO button moves smoothly and far */
 if (noBtn && buttonsArea) {
   noBtn.addEventListener("mouseenter", () => {
     const maxX = buttonsArea.clientWidth - noBtn.offsetWidth;
@@ -17,24 +16,20 @@ if (noBtn && buttonsArea) {
   });
 }
 
-// YES button → open new page
+/* YES button opens new page */
 if (yesBtn) {
   yesBtn.addEventListener("click", () => {
     window.location.href = "yes.html";
   });
 }
 
-// ===== HEART ANIMATION (WORKS ON ALL PAGES) =====
+/* ❤️ HEARTS (works on BOTH pages) */
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
   heart.innerText = "💖";
-
   heart.style.left = Math.random() * 100 + "vw";
-
   document.body.appendChild(heart);
 
-  setTimeout(() => {
-    heart.remove();
-  }, 3000);
+  setTimeout(() => heart.remove(), 3000);
 }, 400);
